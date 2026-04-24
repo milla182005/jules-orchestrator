@@ -1,0 +1,48 @@
+{
+  "name": "jules-orchestrator",
+  "version": "1.0.0",
+  "description": "Dashboard Desktop pour orchestrer des agents IA Jules",
+  "main": "main.js",
+  "scripts": {
+    "start": "concurrently \"npm run vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "vite": "vite",
+    "build": "vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "concurrently": "^9.1.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "vite": "^6.0.3",
+    "wait-on": "^8.0.1"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "uuid": "^11.0.3"
+  },
+  "build": {
+    "appId": "com.jules.orchestrator",
+    "productName": "Jules Orchestrator",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "agents/**/*",
+      "logs/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
