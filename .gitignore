@@ -1,0 +1,28 @@
+# Dépendances
+node_modules/
+
+# Build
+dist/
+dist-electron/
+
+# Données locales sensibles (tokens, configs agents, logs)
+agents/
+logs/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
